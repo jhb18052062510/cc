@@ -1,0 +1,28 @@
+<input type="text" placeholder="username" [(ngModel)]="username">
+<input type="text" placeholder="password" [(ngModel)]="password">
+年龄：<select [(ngModel)]="age">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+</select>
+<button (click)="onAdd()">添加</button>
+<br>
+<br>
+<table width="80%" border="1">
+  <thead>
+    <th>用户名</th>
+    <th>密码</th>
+    <th>年龄</th>
+    <th>删除</th>
+  </thead>
+  <tr *ngFor="let item of users">
+    <td>{{item.username}}</td>
+    <td>{{item.password}}</td>
+    <td>{{item.age}}</td>
+    <td>
+      <button (click)="onDelete(i)">删除</button>
+    </td>
+  </tr>
+  
+</table>
